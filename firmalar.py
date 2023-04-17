@@ -9,11 +9,11 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 titles = []
 for title in soup.find_all('h3', {'class': 'ite-exhibitor-name'}):
-    title = title.text.strip().lower()
+    title = title.text.strip()
     titles.append(title)
 
 df = pd.DataFrame({'Şirket Adı': titles})
-df.to_csv('yapifuarifirmaisim.csv', index=False, encoding='utf-8')
+df.to_csv('yapifuarifirmaisim.csv', index=False, encoding="utf-8")
 
 print(df)
 
